@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flippers-</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran:wght@200&family=Courgette&family=Dancing+Script:wght@700&family=Edu+TAS+Beginner:wght@700&family=Lato:wght@300;900&family=Mukta:wght@700&family=Mulish:wght@300&family=Open+Sans&family=PT+Sans:ital,wght@1,700&family=Poppins:wght@300&family=Raleway:wght@100&family=Roboto&family=Roboto+Condensed:wght@700&family=Roboto+Slab&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f30fac2c61.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <script>
+
+
+        // Initialize cart
+        let cart = [];
+
+        // Function to add item to the cart
+        function addToCart(productName, productPrice) {
+            const product = { name: productName, price: productPrice };
+            cart.push(product);
+            updateCartDisplay();
+            alert(`${productName} has been added to your cart!✔✔✔✔`);
+        }
+
+        // Update cart display (could be expanded to show the cart on the UI)
+        function updateCartDisplay() {
+            console.log('Current Cart:', cart);
+        }
+
+        // Event delegation for handling clicks on "Add to Cart" buttons
+        document.addEventListener('click', function (event) {
+            if (event.target.classList.contains('add-to-cart')) {
+                event.preventDefault();
+                const productName = event.target.getAttribute('data-product-name');
+                const productPrice = event.target.getAttribute('data-product-price');
+                addToCart(productName, productPrice);
+            }
+        });
+
+
+        function displayCart() {
+            let cartContent = 'Your Cart:\n';
+            cart.forEach((item, index) => {
+                cartContent += `${index + 1}. ${item.name} - $${item.price}\n`;
+            });
+            alert(cartContent);
+        }
+
+        // Add a "View Cart" button
+        const viewCartButton = document.createElement('button');
+        viewCartButton.innerText = 'View Cart';
+        viewCartButton.onclick = displayCart;
+        document.body.appendChild(viewCartButton);
+
+
+   
+
+    </script>
+
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <h1><span>F</span>lippers</h1>
+            </div>
+            <i class="fa-solid fa-cart-shopping fa-shake  fa-xl" style="color: #000000;"></i>
+            <ul>
+                <li><a href="">Home </a> </li>
+                <li><a href="#women">Women </a></li>
+                <li><a href="#men">Men </a></li>
+                <li><a href="#trending">Trending </a></li>
+                <li><a id="op" href="./Diwali.html"> Sale- is Live </a></li>
+            </ul>
+        </nav>
+
+
+
+
+        <div class="main">
+            <div class="mainText">
+                <h1>Let's Go For Shopping</h1>
+                <p>Online shopping is a form of electronic commerce which allows consumers to directly buy goods or <br>
+                  <br>  services from a seller over the Internet using a web browser or a mobile app.</p>
+                <button>Explore</button>
+            </div>
+        </div>
+
+
+        <div id="trending"></div>
+        <div class="head">
+            <h1>Treding <span>Offer</span></h1>
+        </div>
+        <div class="trends">
+            <div class="trendsCard">
+                <img src="https://plus.unsplash.com/premium_photo-1675186049419-d48f4b28fe7c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZmFzaGlvbiUyMHRyZW5kc3xlbnwwfHwwfHx8MA%3D%3D"
+                    alt="">
+                <img src="https://images.unsplash.com/photo-1560857792-215f9e3534ed?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMHRyZW5kc3xlbnwwfHwwfHx8MA%3D%3D"
+                    alt="">
+                <img src="./images/f4.jpg" alt="">
+
+            </div>
+            <div class="trendsCard">
+                <img src="./images/f5.jpg" alt="">
+                <img src="./images/f6.jpg" alt="">
+                <img src="./images/f10.jpg" alt="">
+
+            </div>
+            <div class="trendsCard">
+                <img src="./images/f11.jpg" alt="">
+                <img src="./images/f12.jpg" alt="">
+                <img src="./images/f9.jpg" alt="">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="women">
+        <div class="head">
+            <h1>Women <span>Cloth's</span></h1>
+        </div>
+        <div class="shops">
+            <div class="card">
+                <img src="" alt="">
+                <p>Trends At Best Price</p>
+                <p>Upto 50% OFF</p>
+                <a href="#" class="add-to-cart" data-product-name="Men's Trendy Shirt" data-product-price="20.00">Add To
+                    Cart</a>
+
+            </div>
+            <div class="card">
+                <img src="wm2.webp" alt="">
+                <p>Trends At Best Price</p>
+                <p>Upto 50% OFF</p>
+
+                <a href="#" class="add-to-cart" data-product-name="Men's Trendy Shirt" data-product-price="20.00">Add To
+                    Cart</a>
+
+
+            </div>
+            <div class="card">
+                <img src="wm3.webp" alt="">
+                <p>Trends At Best Price</p>
+                <p>Upto 50% OFF</p>
+
+                <a href="#" class="add-to-cart" data-product-name="Men's Trendy Shirt" data-product-price="20.00">Add To
+                    Cart</a>
+
+
+            </div>
+            <div class="card">
+                <img src="wn4.webp" alt="">
+                <p>Trends At Best Price</p>
+                <p>Upto 50% OFF</p>
+
+                <a href="#" class="add-to-cart" data-product-name="Men's Trendy Shirt" data-product-price="20.00">Add To
+                    Cart</a>
+
+            </div>
+            <div class="card">
+                <img src="wn5.webp" alt="">
+                <p>Trends At Best Price</p>
+                <p>Upto 50% OFF</p>
+
+                <a href="#" class="add-to-cart" data-product-name="Men's Trendy Shirt" data-product-price="20.00">Add To
+                    Cart</a>
+
+            </div>
+            <div class="card">
+                <img src="wn6.webp" alt="">
+                <p>Trends At Best Price</p>
+                <p>Upto 50% OFF</p>
+
+                <a href="#" class="add-to-cart" data-product-name="Men's Trendy Shirt" data-product-price="20.00">Add To
+                    Cart</a>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="men">
+        <div class="head">
+            <h1>Men <span>Cloth's</span></h1>
+        </div>
+        <div class="shops">
+            <div class="card">
+                <img src="M1.webp" alt="">
+                <p>Trends At Best Price</p>
+                <p>Upto 50% OFF</p>
+
+                <a href="#" class="add-to-cart" data-product-name="Men's Trendy Shirt" data-product-price="20.00">Add To
+                    Cart</a>
+
+            </div>
+            <div class="card">
+                <img src="M2.webp" alt="">
+                <p>Trends At Best Price</p>
+                <p>Upto 50% OFF</p>
+
+                <a href="#" class="add-to-cart" data-product-name="Men's Trendy Shirt" data-product-price="20.00">Add To
+                    Cart</a>
+
+            </div>
+            <div class="card">
+                <img src="wm3.webp" alt="">
+                <p>Trends At Best Price</p>
+                <p>Upto 50% OFF</p>
+
+                <a href="#" class="add-to-cart" data-product-name="Men's Trendy Shirt" data-product-price="20.00">Add To
+                    Cart</a>
+
+            </div>
+            <div class="card">
+                <img src="M3.webp" alt="">
+                <p>Trends At Best Price</p>
+                <p>Upto 50% OFF</p>
+
+                <a href="#" class="add-to-cart" data-product-name="Men's Trendy Shirt" data-product-price="20.00">Add To
+                    Cart</a>
+
+            </div>
+            <div class="card">
+                <img src="M1.webp" alt="">
+                <p>Trends At Best Price</p>
+                <p>Upto 50% OFF</p>
+
+                <a href="#" class="add-to-cart" data-product-name="Men's Trendy Shirt" data-product-price="20.00">Add To
+                    Cart</a>
+
+            </div>
+            <div class="card">
+                <img src="M2.webp" alt="">
+                <p>Trends At Best Price</p>
+                <p>Upto 50% OFF</p>
+
+                <a href="#" class="add-to-cart" data-product-name="Men's Trendy Shirt" data-product-price="20.00">Add To
+                    Cart</a>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 
+        <div class="cardPage">
+            <div class="cardImg">
+
+            </div>
+            <div class="cardText">
+                <h1>Lets Go With Trend</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur </p>
+                <p>Lorem ipsum dolor, sit amet consectetur </p>
+                <p>Lorem ipsum dolor, sit amet consectetur </p>
+                <p>Lorem ipsum dolor, sit amet consectetur </p>
+                <p>Lorem ipsum dolor, sit amet consectetur </p>
+                <a href="">Buy Now</a>
+                <a href="">Add To Cart</a>
+            </div>
+        </div> -->
+
+    <div class="footer">
+        <div class="text">
+            <h3>About Us</h3>
+            <p>Since 1995</p>
+            <p>Fabric</p>
+            <p>Cotton</p>
+            <p>leanen</p>
+
+        </div>
+        <div class="text">
+            <h3>Women</h3>
+            <p>Best Price</p>
+            <p>Quality</p>
+            <p>Affordable</p>
+            <p>Lowest Price</p>
+
+        </div>
+        <div class="text">
+            <h3>Men</h3>
+            <p>Top Quality</p>
+            <p>Best Price</p>
+            <p>Affordable</p>
+            <p>Trend</p>
+
+        </div>
+        <div class="text">
+            <h3>Connect Us</h3>
+            <p>-----</p>
+            <p>-----</p>
+            <p>https://github.com/dashboard</p>
+            <p>------</p>
+
+        </div>
+    </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
