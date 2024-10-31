@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    background-image: url('https://media.istockphoto.com/id/853314402/vector/creative-happy-diwali-festival-greeting-design.jpg?s=612x612&w=0&k=20&c=1o3EMqngZa2UZXt8bxktQQf1YuHE0I-a8VbjsjqVYPI='); /* Add a festive background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: rgba(51, 51, 51, 0.8); /* Slightly transparent background */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav li {
+    margin-right: 20px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero {
+    background-image: linear-gradient(to bottom, rgba(255, 105, 180, 0.8), rgba(255, 153, 204, 0.8)), url('diwali-hero.jpg'); /* Add a hero image */
+    background-size: cover;
+    background-position: center;
+    padding: 100px;
+    text-align: center;
+    color: #fff;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    
+}
+
+.hero button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    background-color: #444;
+}
+
+.products {
+    padding: 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.product {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    position: relative; /* For positioning the overlay */
+}
+
+.product img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.product h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.product button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.product button:hover {
+    background-color: #444;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Add festive decorations */
+.decorative {
+    position: absolute;
+    width: 50px; /* Adjust size as necessary */
+    height: 50px; /* Adjust size as necessary */
+    background-image: url('https://media.istockphoto.com/id/858748954/vector/diwali-crackers.jpg?s=612x612&w=0&k=20&c=0yp4d-BbPLhLxgDvfkcbahGMhoXGBO14zAM27nK23IE='); /* Replace with your own cracker image */
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Example positioning for decorative elements */
+.product:nth-child(1) .decorative {
+    top: 10px;
+    right: 10px;
+}
+
+.product:nth-child(2) .decorative {
+    top: 10px;
+    left: 10px;
+}
+
+.product:nth-child(3) .decorative {
+    bottom: 10px;
+    right: 10px;
+}
+
+@media (max-width: 768px) {
+    .hero { padding: 50px; }
+    .hero h2 { font-size: 28px; }
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  
+  @media (max-width: 480px) {
+    .hero { padding: 30px; }
+    .hero h2 { font-size: 24px; }
+    .product-grid { grid-template-columns: 1fr; }
+  }
+  
